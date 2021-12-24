@@ -3,7 +3,12 @@ import argparse
 import os
 import sys
 from pprint import pprint
-from collections import Iterable, defaultdict
+from collections import defaultdict
+try:
+    from collections.abc import Iterable
+except ImportError:
+    from collections import Iterable
+
 
 from meshroom.core import graph as pg
 

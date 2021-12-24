@@ -3,7 +3,10 @@ import logging
 import math
 import os
 from threading import Thread
-from collections import Iterable
+try:
+    from collections.abc import Iterable
+except ImportError:
+    from collections import Iterable
 
 from PySide2.QtCore import QObject, Slot, Property, Signal, QUrl, QSizeF
 from PySide2.QtGui import QMatrix4x4, QMatrix3x3, QQuaternion, QVector3D, QVector2D
